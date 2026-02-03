@@ -46,17 +46,16 @@ def check_events(ai_settings, screen, ship, bullets):
        
 
 
-def update_screen(ai_settings, screen, ship, alien, bullets):
+def update_screen(ai_settings, screen, ship, aliens, bullets):
         
         # Redraw the screen during each pass through loop
         screen.fill(ai_settings.bg_color)
         ship.blitme()
-        
+
         # Redraw all bullets behind ships and aliens.
         for bullet in bullets:
              bullet.draw_bullet()
-        ship.blitme()
-        alien.draw(screen)
+        aliens.draw(screen)
         
 
         # Make the most recently drawn screen visible
@@ -81,7 +80,7 @@ def create_fleet(ai_settings, screen, aliens):
      # Spacing between each alien is equal to one alien width
      alien = Alien(ai_settings, screen)
      alien_width = alien.rect.width
-     available_space_x = ai_settings.screen_wdith - 2 * alien_width
+     available_space_x = ai_settings.screen_width - 2 * alien_width
      number_aliens_x = int(available_space_x / (2 * alien_width))
 
      # Create the first row of aliens.
