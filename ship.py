@@ -38,5 +38,5 @@ class Ship():
 
 
     def blitme(self):
-        """Draw the shit at its location"""
+        """Draw the ship at its location"""
         self.screen.blit(self.image,self.rect)
